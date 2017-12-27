@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.lihui</groupId>
   <artifactId>jmsListenerTest</artifactId>
-  <packaging>war</packaging>
+  <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>jmsListenerTest Maven Webapp</name>
   <parent>
@@ -16,15 +16,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-      <!--<version>1.5.7.RELEASE</version>-->
-    </dependency>
-
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-activemq</artifactId>
@@ -47,6 +39,7 @@
       <plugins>
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
+          <!--指定编译java文件的jdk版本是1.8-->
           <configuration>
             <source>1.8</source>
             <target>1.8</target>
@@ -55,6 +48,9 @@
         <plugin>
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+                    <mainClass>com.lihui.jmsListener.JmsMessageListenerTest</mainClass>
+            </configuration>
         </plugin>
       </plugins>
   </build>
