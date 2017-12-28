@@ -1,17 +1,18 @@
-package com.lihui.jmsListener;
+package com.lihui.jmsListener.jmsactivemmq;
 
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Service;
 
 @Service
+@Slf4j
 public class JmsMessageListener {
-    private static final Logger logger= LoggerFactory.getLogger(JmsMessageListener.class);
 
-    @JmsListener(destination = "lihui02ling")
+    @JmsListener(destination = "lihui01message")
     public void getMessage(String message){
-        logger.info("====JmsListener收到消息====={}",message);
+        log.info("====JmsListener收到消息====={}",message);
     }
 
 }
